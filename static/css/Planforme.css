@@ -1,0 +1,60 @@
+#footer h2{
+	text-align: center;
+	margin: 0 auto;
+	line-height: 70px;
+}
+
+#box{
+	width: 300px;
+	height: 690px;
+	margin: 0 auto;
+	border-radius: 25px;
+	border: 3px solid;
+}
+#box header{
+	text-align: center;
+}
+#box div{
+	z-index: 1;
+}
+
+#back img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	float: left;
+	margin-left: 28px;
+
+}
+#jsonWrap{
+	height: 500px;
+	overflow: auto;
+}
+.objS{
+	padding: 15px;
+	height: 230px;
+	border: 1px solid #9a9696;
+}
+
+.objS h4{
+	font-size: 20px;
+}
+
+.objS h3{
+	font-size: 17px;
+}
+
+.highColor{
+	color: rgb(42,198,187);
+}
+#continue {
+	background-color: rgb(42,198,187);
+	color: #fff;
+	width: 80%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	margin: 10px auto;
+}

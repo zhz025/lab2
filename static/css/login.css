@@ -1,0 +1,77 @@
+#footer h2{
+	text-align: center;
+	margin: 25% auto 0;
+	font-size: 46px;
+	line-height: 70px;
+	font-family: -webkit-pictograph;
+}
+
+#box{
+	width: 300px;
+	height: 690px;
+	margin: 0 auto;
+	border-radius: 25px;
+	border: 3px solid;
+}
+#box header{
+	text-align: center;
+}
+#box div{
+	z-index: 1;
+}
+
+#back img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	float: left;
+	margin-left: 28px;
+	margin-top: 560px;
+}
+
+.loginForm{
+	width: 75%;
+	margin: 50px auto;
+}
+
+.formL{
+	margin: 25px auto;
+}
+
+.formL p{
+	margin-left: 15px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.formL input{
+	width: 95%;
+	height: 25px;
+	border-radius: 5px;
+	border: 1px solid #424242;
+}
+
+input::-webkit-input-placeholder {
+	padding-left:15px;
+	font-size: 16px;
+}
+
+.formL button{
+	width: 95%;
+	height: 33px;
+	font-size: 18px;
+}
+
+.fc{
+	text-align: center;
+	margin-top: 60px;
+}
+
+.highColor{
+	color: rgb(42,198,187);
+}
+
+.highColorBtn{
+	background-color:rgb(42,198,187);;
+	color:#ffffff;
+}

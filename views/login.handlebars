@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homepage</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<script src="/js/jquery.js"></script>
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+</head>
+
+<body>
+<div id="box">
+	<div id="footer">
+		<h2 class="highColor">ALLSET</h2>
+	</div>
+    <div class="loginForm">
+		<div class="formL">
+			<p class="highColor">Email</p>
+			<input type="text" name="email" placeholder="Email">
+		</div>
+		<div class="formL" style="margin-top: 30px">
+			<p class="highColor">Password</p>
+			<input type="text" name="password" placeholder="Password">
+		</div>
+		<div class="formL">
+			<button onclick="Login()" class="highColorBtn">Sign In</button>
+		</div>
+		<div class="fc">
+			<p>Don't have an account yet?</p>
+			<a href="/register" class="highColor">Sign Up</a>
+			<p class="facebookLogin"> Please login through Facebook
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+			
+			</fb:login -button>
+			</p>
+			<p>Forgot your password?</p>
+			<span class="highColor">Reset Password</span>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+	function Login() {
+		var email = $("input[name=email]").val()
+		var password = $("input[name=password]").val()
+
+		if(email.trim() == '' || password.trim() == '') {
+			alert("Email or password cannot be empty")
+			return
+		}
+		$.post("/api/login",{email,password},function(data){
+			if (data.code == 0) {
+				alert("login successful")
+				location.href = '/'
+			} else {
+				alert("Email or password is incorrect")
+			}
+		})
+	}
+	$(function(){
+
+
+	})
+</script>
+</body>
+</html>

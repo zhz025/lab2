@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Second</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="css/Second.css">
+</head>
+<body>
+<div id="box">
+	<div id="header">
+		<form action="#" method="post">
+			<div class="form_obj">
+				<span>Name:</span>
+				<input name="name" id="name" required="required" >
+			</div>
+			<div class="form_obj">
+				<span>Class:</span>
+				<input name="classN" id="classN">
+			</div>
+			<div class="form_obj">
+				<span>Due Date:</span>
+				<input type="date" name="date" id="date">
+			</div>
+			<p>Time<br>Needed:&nbsp;<input type="number" name="time" id="time"></p>
+		</form>
+	</div>
+	<div id="footer" class="highColor">
+		<h2 onclick="postData()" style="color: #ffffff">Add</h2>
+	</div>
+	<div id="back">
+		<a href="/"><img src="photo/arrow.png"></a>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/json.js"></script>
+<script>
+    
+    function postData() {
+        var name=$("#name").val();
+        var classN=$("#classN").val();
+        var date=$("#date").val();
+        var time=$("#time").val();
+        if (name&&classN&&date&&time){
+            var obj={
+                "name": name,
+                "classN":classN,
+                "date": date,
+                "time": time
+            }
+            $.post("/api/AddAssignment",obj,function(data) {
+                alert('ADD！');
+                window.location.href='/'
+            })
+		}
+		else {
+            alert('CAN NOT LEAVE BLANK！')
+		}
+    }
+
+</script>
+</body>
+</html>

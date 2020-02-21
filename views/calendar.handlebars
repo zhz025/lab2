@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homepage</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="css/Calendar.css">
+	<script src="/js/jquery.js"></script>
+	<script src="/js/calendar.js"></script>
+</head>
+
+<body>
+<div id="box">
+	<div id="footer">
+		<h2>Calendar</h2>
+	</div>
+
+	<div id="calendar"></div>
+	{{!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=emh6MDI1QHVjc2QuZWR1&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%2333B679&amp;showTz=0&amp;showCalendars=1&amp;showPrint=0&amp;showNav=1&amp;showTabs=0" style="border:solid 1px #777" width="100%" height="590" frameborder="0" scrolling="no"></iframe> --}}
+
+	<div id="back" style="position: fixed;">
+		<a href="/"><img src="photo/arrow.png"></a>
+	</div>
+</div>
+
+
+<script>
+
+		var data = {{{jsonstringify data}}}
+
+    $("#calendar").calendar({
+        data: data,
+        mode: "month",
+        //  maxEvent: 3,
+        //showModeBtn: false
+      //  newDate: "2018-04-1",
+        cellClick: function (events) {
+            //viewCell的事件列表
+						var ids = events.map(function(item) {
+							return item.id
+						})
+						if(ids.length > 0) {
+							location.href = '/?id=' + ids.join(",")
+						}
+        },
+    })
+
+
+</script>
+</body>
+</html>

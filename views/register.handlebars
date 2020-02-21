@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homepage</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="/css/register.css">
+	<script src="/js/jquery.js"></script>
+</head>
+
+<body>
+<div id="box">
+	<div id="footer">
+		<h2 class="highColor">ALLSET</h2>
+	</div>
+    <div class="loginForm">
+		<div class="formL">
+			<p class="highColor">Email</p>
+			<input type="text" name="email" placeholder="Email">
+		</div>
+		<div class="formL" style="margin-top: 30px">
+			<p class="highColor">Password</p>
+			<input type="text" name="password" placeholder="Password">
+		</div>
+		<div class="formL" style="margin-top: 30px">
+			<p class="highColor">Confirm Password</p>
+			<input type="text" name="repassword" placeholder="Password">
+		</div>
+		<div class="formL">
+			<button class="highColorBtn" onclick="SignUp()">Sign Up</button>
+		</div>
+	</div>
+
+<script>
+function SignUp() {
+		var email = $("input[name=email]").val()
+		var password = $("input[name=password]").val()
+		var repassword = $("input[name=repassword]").val()
+
+		if (email.trim() == '' || password.trim() == '' || repassword.trim() == '') {
+			alert("Email or password cannot be empty")
+			return
+		}
+
+		if (password !== repassword) {
+			alert("Inconsistent passwords twice")
+			return
+		}
+
+		$.post("/api/register",{email,password},function(data){
+			if (data.code == 0) {
+				alert("resister successful")
+				location.href = '/login'
+			} else {
+				alert("Duplicate mailboxes")
+			}
+		})
+}
+
+</script>
+</div>
+</body>
+</html>

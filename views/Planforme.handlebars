@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homepage</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" type="text/css" href="css/Planforme.css">
+</head>
+
+<body>
+<div id="box">
+	<div id="header " style="text-align: center;">
+		<h2 class="highColor">Plan for me</h2>
+	</div>
+	<div id="jsonWrap">
+        {{#each assignment}}
+        <div class="objS">
+					<input type="checkbox">
+            <h4 class="highColor">{{name}}</h4>
+            <h4>{{classN}}</h4>
+            <h3>Due Date: {{formatDate date}}</h3>
+            <h3>Time Left: {{countTime date}} days</h3>
+        </div>
+        {{/each}}
+	</div>
+	<div id="continue">
+		continue
+	</div>
+	<div id="back">
+		<a href="/"><img src="photo/arrow.png"></a>
+	</div>
+
+</div>
+</body>
+</html>

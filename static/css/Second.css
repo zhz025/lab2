@@ -1,0 +1,44 @@
+#box{
+	width: 300px;
+	height: 690px;
+	margin: 0 auto;
+	border-radius: 25px;
+	border: 3px solid;
+}
+#header{
+	margin-left: 20px;
+	margin-top: 150px;
+}
+.form_obj{
+	margin: 10px 0;
+}
+#header span{
+	display: inline-flex;
+	width: 80px;
+}
+#header input{
+	width: 160px;
+	/*margin-left: 80px;*/
+}
+#footer{
+	width: 300px;
+	height: 70px;	
+	margin-top: 140px;
+	border: 1px solid;
+}
+#footer h2{
+	text-align: center;
+	margin: 0 auto;
+	line-height: 70px;
+}
+#back img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	float: left;
+	margin-left: 28px;
+	margin-top: 50px;
+}
+.highColor{
+	background-color: rgb(42,198,187);
+}

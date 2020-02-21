@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homepage</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+</head>
+<body>
+<div id="box">
+	<header>
+		{{#if fburl }}
+			<a href="/api/exit"><img src='{{fburl}}' id="login"></a>
+		{{else }}
+			<a href="/api/exit"><img src='photo/6.png' id="login"></a>
+		{{/if}}
+		<h3 id="titleT" style="font-size: 22px;" class="highColor"></h3>
+		<hr>
+	</header>
+	<div id="jsonWrap">
+        {{#each assignment}}
+        <div class="objS">
+            <h4 class="highColor">{{name}}</h4>
+            <h4>{{classN}}</h4>
+            <h3>Due Date: {{formatDate date}}</h3>
+            <h3>Time Left: {{countTime date}} days</h3>
+						<button style="float: right;" onclick="deleteID({{id}})">delete</button>
+        </div>
+        {{/each}}
+	</div>
+	<div id="footer">
+		<div id="footer1">
+			<img src="photo/1_in.png">
+		</div>
+		<div id="footer2">
+			<a href="/calendar"><img src="photo/2.png"></a>
+		</div>
+		<div id="footer3">
+			<a href="/Assignment"><img src="photo/3.png"></a>
+		</div>
+		
+		<div id="footer5">
+			<a href="/Planforme"><img src="photo/5.png"></a>
+		</div>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/handlebars.min-v4.7.3.js"></script>
+<script src="js/json.js"></script>
+
+
+<script id="table-template" type="text/x-handlebars-template">
+	{{!-- {{#each assignment}}
+        <div class="objS">
+            <h4 class="highColor">{{name}}</h4>
+            <h4>{{classN}}</h4>
+            <h3>Due Date: {{formatDate date}}</h3>
+            <h3>Time Left: {{countTime date}} days</h3>
+        </div>
+        {{/each}} --}}
+</script>
+<script>
+    $(function () {
+        var myDate = new Date();
+        var xTtime = myDate.toLocaleDateString( ).replace(/\//g, '-');       //update due date
+				var titleT=new Date(xTtime).toDateString();
+				$("#titleT").html(titleT);
+    })
+
+		function deleteID(id) {
+			$.post("/api/deleteAssignmentByID",{id},function(data){
+				if (data.code == 0) {
+					alert("delete success")
+					location.reload()
+				}
+			})
+		}
+    
+</script>
+</body>
+</html>

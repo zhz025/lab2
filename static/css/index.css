@@ -1,0 +1,91 @@
+
+#box{
+	width: 300px;
+	height: 690px;
+	margin: 0 auto;
+	border-radius: 25px;
+	border: 3px solid;
+	position: relative;
+}
+#box header{
+	position: relative;
+	height: 52px;
+	text-align: center;
+}
+#login{
+	position: absolute;
+	height: 30px;
+	right: 10px;
+}
+#box div{
+	z-index: 1;
+}
+#jsonWrap{
+	height: 500px;
+	overflow: auto;
+}
+#footer{
+	position: absolute;
+	display: flex;
+	bottom: 20px;
+	height: 35px;
+}
+
+#footer1 img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	/*float: left;*/
+	margin-left: 10px;
+	margin-top: -20px;
+}
+#footer2 img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	/*float: left;*/
+	margin-left: 25px;
+	margin-top: -20px;
+}
+#footer3 img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	/*float: left;*/
+	margin-left: 28px;
+	margin-top: -20px;
+}
+#footer4 img{
+	z-index: 10;
+	width: 33px;
+	height: 33px;
+	/*float: left;*/
+	margin-left: 22px;
+	margin-top: -20px;
+}
+#footer5 img{
+	z-index: 10;
+	width: 120px;
+	height: 36px;
+	/*float: left;*/
+	margin-left: 14px;
+	margin-top: -20px;
+}
+
+.objS{
+	padding: 15px;
+	height: 230px;
+	border: 1px solid #9a9696;
+}
+
+.objS h4{
+	font-size: 20px;
+}
+
+.objS h3{
+	font-size: 17px;
+}
+
+.highColor{
+	color: rgb(42,198,187);
+}
